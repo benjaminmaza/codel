@@ -32,23 +32,23 @@
                         <span style="color: white !important;">Pour le moment je ne suis pas prête</span>
                     </a>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                <!-- Popup de confirmation -->
-                <div id="confirmPopup" class="popup-overlay" style="display: none;">
-                    <div class="popup-content">
-                        <div class="popup-message" style="text-align: center;">
-                            <p style="font-size: 1.5rem; margin-bottom: 1.5rem;">Sûr ?</p>
-                            <div class="discovery-section">
-                                <a id="confirmYesBtn" href="{{ path('quiz_letsgo') }}" class="btn-primary discovery-btn" style="text-decoration: none;">
-                                    <span>Oui</span>
-                                </a>
-                                <a id="confirmNoBtn" href="{{ path('quiz_success') }}" class="btn-primary discovery-btn" style="text-decoration: none; background: #999 !important; opacity: 0.7; cursor: pointer;">
-                                    <span style="color: white !important;">Non</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Popup placée en dehors du quiz-container pour un positionnement fixe correct -->
+<div id="confirmPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <div class="popup-message" style="text-align: center;">
+            <p style="font-size: 1.5rem; margin-bottom: 1.5rem;">Sûr ?</p>
+            <div class="discovery-section">
+                <a id="confirmYesBtn" href="{{ path('quiz_letsgo') }}" class="btn-primary discovery-btn" style="text-decoration: none;">
+                    <span>Oui</span>
+                </a>
+                <a id="confirmNoBtn" href="{{ path('quiz_success') }}" class="btn-primary discovery-btn" style="text-decoration: none; background: #999 !important; opacity: 0.7; cursor: pointer;">
+                    <span style="color: white !important;">Non</span>
+                </a>
             </div>
         </div>
     </div>

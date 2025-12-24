@@ -33,43 +33,6 @@
                         <span style="color: white !important;">Comment tu te sens avec moi ?</span>
                     </button>
                 </div>
-                
-                <!-- Popup modal for "qui je suis" -->
-                <div id="discoveryMePopup" class="popup-overlay" style="display: none;">
-                    <div class="popup-content">
-                        <button class="popup-close" data-popup="me">&times;</button>
-                        <div class="popup-message">
-                            <p>C'est toi qui pourrait en parler le mieux ;)</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Popup modal for "comment tu te sens" (disabled) -->
-                <div id="discoveryFeelPopup" class="popup-overlay" style="display: none;">
-                    <div class="popup-content">
-                        <button class="popup-close" data-popup="feel">&times;</button>
-                        <div class="popup-message">
-                            <p>Cette fonctionnalité n'est pas disponible pour le moment</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Popup modal for "qui tu es" -->
-                <div id="discoveryYouPopup" class="popup-overlay" style="display: none;">
-                    <div class="popup-content popup-large">
-                        <button class="popup-close" data-popup="you">&times;</button>
-                        <div class="popup-message">
-                            <p>Tu es un être humain, une femme vivante, sur la planète Terre, 3ᵉ planète du système solaire, l'un des 100 milliards de systèmes planétaires estimés dans la galaxie de la Voie lactée, elle-même l'une des 2 000 milliards de galaxies de l'univers observable.</p>
-                            <p>Ton organisme est constitué d'un assemblage temporaire de particules élémentaires — quarks, électrons, photons — organisées en atomes puis en molécules complexes, forgés dans le cœur d'anciennes étoiles. Le tout évoluant depuis plus de 13,8 milliards d'années. Et ouais, nous sommes littéralement de la poussière d'étoile, c'est la classe non ?</p>
-                            <p>Ton nom d'humaine est Lysa, avec un y pour le style, il y en a seulement 2500 en France. Ton âge biologique est de 40 ans. Ton état d'esprit se situe entre 25 et 35 ans. Ton âge mental reste indéterminé.</p>
-                            <p>Tu es motivée, tu es positive, tu es sociable et tournée vers les autres. Tu penses toujours à ce qui pourrait faire plaisir aux autres. Parfois c'est lourd à porter pour toi.</p>
-                            <p>Tu comprends vite, tu n'aimes pas qu'on répète les choses, tu te fais un avis rapide et souvent juste sur une situation. Tu sais ce que tu veux, et on ne te fait pas changer d'avis comme ça — et en même temps, choisir un plat, un vêtement ou un bijou peut parfois prendre des heures.</p>
-                            <p>Tu peux faire beaucoup par amour, tu es démonstrative, attentionnée et pleine de tendresse pour l'autre. Pour te sentir bien, tu as besoin de sécurité, de preuves d'amour constantes.</p>
-                            <p>Tu veux bouger, voir le monde et ne surtout pas revenir au même endroit. Tu râles quand les randos sont plus dures que prévu, et en même temps, physiquement tu assures grave.</p>
-                            <p>Tu as une expression qu'on adore quand tu es légèrement gênée et que j'appelle la mou légendaire. Tu dégages une énergie physique douce, attractive et délicate. Tu es juste belle en fait.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -88,6 +51,41 @@
             <div id="feedbackMessage" class="feedback-message" style="display: none;">
                 <p>Merci pour ton feedback ! 🙏</p>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popups placées en dehors du quiz-container pour un positionnement fixe correct -->
+<div id="discoveryMePopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <button class="popup-close" data-popup="me">&times;</button>
+        <div class="popup-message">
+            <p>C'est toi qui pourrait en parler le mieux ;)</p>
+        </div>
+    </div>
+</div>
+
+<div id="discoveryFeelPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <button class="popup-close" data-popup="feel">&times;</button>
+        <div class="popup-message">
+            <p>Cette fonctionnalité n'est pas disponible pour le moment</p>
+        </div>
+    </div>
+</div>
+
+<div id="discoveryYouPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content popup-large">
+        <button class="popup-close" data-popup="you">&times;</button>
+        <div class="popup-message">
+            <p>Tu es un être humain, une femme vivante, sur la planète Terre, 3ᵉ planète du système solaire, l'un des 100 milliards de systèmes planétaires estimés dans la galaxie de la Voie lactée, elle-même l'une des 2 000 milliards de galaxies de l'univers observable.</p>
+            <p>Ton organisme est constitué d'un assemblage temporaire de particules élémentaires — quarks, électrons, photons — organisées en atomes puis en molécules complexes, forgés dans le cœur d'anciennes étoiles. Le tout évoluant depuis plus de 13,8 milliards d'années. Et ouais, nous sommes littéralement de la poussière d'étoile, c'est la classe non ?</p>
+            <p>Ton nom d'humaine est Lysa, avec un y pour le style, il y en a seulement 2500 en France. Ton âge biologique est de 40 ans. Ton état d'esprit se situe entre 25 et 35 ans. Ton âge mental reste indéterminé.</p>
+            <p>Tu es motivée, tu es positive, tu es sociable et tournée vers les autres. Tu penses toujours à ce qui pourrait faire plaisir aux autres. Parfois c'est lourd à porter pour toi.</p>
+            <p>Tu comprends vite, tu n'aimes pas qu'on répète les choses, tu te fais un avis rapide et souvent juste sur une situation. Tu sais ce que tu veux, et on ne te fait pas changer d'avis comme ça — et en même temps, choisir un plat, un vêtement ou un bijou peut parfois prendre des heures.</p>
+            <p>Tu peux faire beaucoup par amour, tu es démonstrative, attentionnée et pleine de tendresse pour l'autre. Pour te sentir bien, tu as besoin de sécurité, de preuves d'amour constantes.</p>
+            <p>Tu veux bouger, voir le monde et ne surtout pas revenir au même endroit. Tu râles quand les randos sont plus dures que prévu, et en même temps, physiquement tu assures grave.</p>
+            <p>Tu as une expression qu'on adore quand tu es légèrement gênée et que j'appelle la mou légendaire. Tu dégages une énergie physique douce, attractive et délicate. Tu es juste belle en fait.</p>
         </div>
     </div>
 </div>
