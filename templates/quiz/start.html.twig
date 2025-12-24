@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Unlock Us - L'aventure commence{% endblock %}
+
+{% block body %}
+<div class="quiz-container">
+    <div class="start-page">
+        <div class="hearts-decoration">
+            <span class="heart">🌟</span>
+            <span class="heart">✨</span>
+            <span class="heart">🔮</span>
+        </div>
+        
+        <div class="intro-section">
+            <h2 class="subtitle">Accès restreint</h2>
+            <p class="description">
+                Seules les personnes qui savent peuvent accèder....
+            </p>
+        </div>
+
+        <div class="start-actions">
+            <button id="startQuizBtn" class="btn-primary" data-first-token="{{ firstToken }}">
+                <span>Commencer l'aventure</span>
+                <span class="btn-icon">🚀</span>
+            </button>
+            
+            {% if currentProgress > 1 %}
+            <div id="resumeSection" class="resume-section">
+                <p>Tu as déjà commencé ton parcours !</p>
+                <button id="resumeBtn" class="btn-secondary" data-resume-id="{{ currentProgress }}" data-resume-token="{{ resumeToken }}">
+                    <span>Reprendre où j'en étais (Question {{ currentProgress }})</span>
+                    <span class="btn-icon">⏮️</span>
+                </button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

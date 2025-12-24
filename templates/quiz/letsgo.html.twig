@@ -1,0 +1,672 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Unlock Us - On y va !!!!{% endblock %}
+
+{% block body %}
+<div class="trip-page">
+    <!-- Hero Section -->
+    <div class="trip-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="trip-title">On y va !!!!</h1>
+            <p class="trip-subtitle">14 jours. Toi et moi. Quelque part où la nature reprend ses droits.</p>
+            <div class="trip-teaser">
+                <span>🌴</span>
+                <span>🦜</span>
+                <span>🌋</span>
+                <span>🐒</span>
+                <span>🌊</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="trip-intro">
+        <div class="intro-content">
+            <h2>Pas de resort. Pas de bus touristique. Pas de selfies chronométré (quoique ^^).</h2>
+            <p>Juste la jungle dense, humide, bruyante. Des animaux en liberté. Des chemins qui demandent de l'attention. Des moments imprévus. Une aventure vraie.</p>
+            <p class="highlight-text">La destination ? Tu la découvriras le jour J. Tout ce que tu dois savoir : c'est l'un des écosystèmes les plus riches de la planète.</p>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="trip-timeline">
+        <h2 class="timeline-title">Le voyage</h2>
+
+        <!-- Day 1 -->
+        <div class="trip-day">
+            <div class="day-image">
+                <img src="{{ asset('img/j1-2.jpg') }}" alt="Jour 1">
+            </div>
+            <div class="day-content">
+                <div class="day-number">Jour 1</div>
+                <h3>L'arrivée</h3>
+                <p>On atterrit. On récupère notre véhicule. On quitte la civilisation.</p>
+                <p>Direction : une région dominée par un géant endormi. Un volcan. On s'installe dans un lodge en pleine nature. Premier soir, premiers bruits de la jungle. Peut-être une sortie nocturne pour s'immerger directement.</p>
+                <p class="day-mood">Le voyage commence vraiment.</p>
+            </div>
+        </div>
+
+        <!-- Day 2-3 -->
+        <div class="trip-day reverse">
+            <div class="day-image">
+                <img src="{{ asset('img/j2.jpg') }}" alt="Jour 2">
+            </div>
+            <div class="day-content">
+                <div class="day-number">Jours 2-3</div>
+                <h3>Le géant et sa jungle</h3>
+                <p>Deux jours au pied du volcan. Randonnées sur les anciennes coulées de lave. Sentiers forestiers. Ponts suspendus à l'aube pour maximiser nos chances de croiser... des habitants.</p>
+                <p>Singes hurleurs. Toucans. Coatis curieux. Grenouilles aux couleurs impossibles.</p>
+                <p class="day-mood">Le soir, on se glisse dans des sources chaudes naturelles. La vapeur monte. Les étoiles apparaissent.</p>
+            </div>
+        </div>
+
+        <!-- Day 2 bis image -->
+        <div class="trip-day">
+            <div class="day-image full-width">
+                <img src="{{ asset('img/j3.jpeg') }}" alt="Jour 3">
+            </div>
+            <div class="day-content">
+                <div class="day-number">L'immersion</div>
+                <h3>Quand la jungle se révèle</h3>
+                <p>On apprend à regarder autrement. À écouter. À ralentir. Chaque branche peut cacher une vie. Chaque son raconte une histoire.</p>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="trip-day reverse">
+            <div class="day-image">
+                <img src="{{ asset('img/j4.jpg') }}" alt="Jour 4">
+            </div>
+            <div class="day-content">
+                <div class="day-number">Jour 4</div>
+                <h3>La route des nuages</h3>
+                <p>On prend de l'altitude. La route serpente. Le paysage change. On quitte la jungle tropicale pour entrer dans quelque chose de différent.</p>
+                <p>Une forêt de nuages. Oui, ça existe. Et c'est exactement aussi magique que ça sonne.</p>
+                <p class="day-mood">Installation dans un lodge forestier. L'air est plus frais. La brume enveloppe tout.</p>
+            </div>
+        </div>
+
+        <!-- Day 5-6 -->
+        <div class="trip-day">
+            <div class="day-image">
+                <img src="{{ asset('img/j5.jpg') }}" alt="Jour 5">
+            </div>
+            <div class="day-content">
+                <div class="day-number">Jours 5-6</div>
+                <h3>Dans les nuages</h3>
+                <p>Randonnées plus longues. Plus engagées. La forêt ici est différente — brumeuse, mystérieuse, presque irréelle.</p>
+                <p>Night walk pour découvrir la faune nocturne. Des créatures qu'on ne voit nulle part ailleurs.</p>
+                <p class="day-mood">Juste nous et la forêt.</p>
+            </div>
+        </div>
+
+        <!-- Day 6 bis -->
+        <div class="trip-day reverse">
+            <div class="day-image">
+                <img src="{{ asset('img/j6.jpg') }}" alt="Jour 6">
+            </div>
+            <div class="day-content">
+                <div class="day-number">L'atmosphère</div>
+                <h3>Un autre monde</h3>
+                <p>La lumière filtre à travers la canopée. Les arbres sont couverts de mousse et d'orchidées. On marche dans un tableau vivant.</p>
+            </div>
+        </div>
+
+        <!-- Day 6 image bonus -->
+        <div class="trip-fullwidth-image">
+            <img src="{{ asset('img/j6-2.webp') }}" alt="Forêt de nuages">
+            <div class="image-caption">Quelque part entre ciel et terre</div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="trip-day">
+            <div class="day-image">
+                <img src="{{ asset('img/j7.jpg') }}" alt="Jour 7">
+            </div>
+            <div class="day-content">
+                <div class="day-number">Jour 7</div>
+                <h3>Vers l'océan</h3>
+                <p>Long transfert. Assumé. On descend des montagnes vers la côte. Le paysage se transforme progressivement.</p>
+                <p>La jungle humide réapparaît. Plus dense. Plus sauvage. On approche de quelque chose de spécial.</p>
+                <p class="day-mood">Nuit dans un lodge jungle. Le Pacifique n'est pas loin.</p>
+            </div>
+        </div>
+
+        <!-- Day 8-9 -->
+        <div class="trip-day reverse">
+            <div class="day-image">
+                <img src="{{ asset('img/j8.jpg') }}" alt="Jour 8">
+            </div>
+            <div class="day-content">
+                <div class="day-number">Jours 8-9</div>
+                <h3>Le sanctuaire</h3>
+                <p>On entre dans l'un des écosystèmes les plus riches de la planète. Jungle primaire. Intacte. Puissante.</p>
+                <p>Excursion guidée dans un parc national légendaire. Tapirs. Aras rouges qui traversent le ciel. Singes partout. Biodiversité maximale.</p>
+                <p class="day-mood">Randonnées longues, humides, intenses. On en ressort transformés.</p>
+            </div>
+        </div>
+
+        <!-- Day 9 -->
+        <div class="trip-day">
+            <div class="day-image">
+                <img src="{{ asset('img/j9.jpg') }}" alt="Jour 9">
+            </div>
+            <div class="day-content">
+                <div class="day-number">L'intensité</div>
+                <h3>Face à face avec le vivant</h3>
+                <p>Des animaux vus en liberté. Parfois loin. Parfois très proches. Des moments qu'on n'oublie pas.</p>
+                <p>La jungle dense, humide, bruyante. On comprend pourquoi cet endroit est considéré comme sacré par les biologistes du monde entier.</p>
+            </div>
+        </div>
+
+        <!-- Day 10 -->
+        <div class="trip-day reverse">
+            <div class="day-image">
+                <img src="{{ asset('img/j10.jpg') }}" alt="Jour 10">
+            </div>
+            <div class="day-content">
+                <div class="day-number">Jour 10</div>
+                <h3>Respirer</h3>
+                <p>Journée plus libre. Une cascade. Une plage sauvage. Observation tranquille. Repos actif.</p>
+                <p>Toujours dans une ambiance nature. Loin des grosses stations. Juste nous, le bruit des vagues, et cette sensation d'être exactement là où on doit être.</p>
+                <p class="day-mood">On profite. On savoure les derniers moments dans la zone.</p>
+            </div>
+        </div>
+
+        <!-- Day 11 -->
+        <div class="trip-day">
+            <div class="day-content centered">
+                <div class="day-number">Jour 11</div>
+                <h3>Le retour</h3>
+                <p>Retour vers la civilisation. On rapporte avec nous bien plus que des photos.</p>
+                <p>Des souvenirs. Des sensations. Une connexion.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Section -->
+    <div class="trip-final">
+        <div class="final-content">
+            <h2>Let's go !!!</h2>
+            <div class="final-details">
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <span class="detail-text">14 jours</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🌿</span>
+                    <span class="detail-text">11 jours d'exploration</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🎂</span>
+                    <span class="detail-text">Pour ton anniversaire</span>
+                </div>
+            </div>
+            <p class="final-message">Pose tes congés du 22/01 au 6/02</p>
+        </div>
+    </div>
+
+    <!-- Back button -->
+    <div class="trip-back">
+        <a href="{{ path('quiz_success') }}" class="btn-primary" style="text-decoration: none;">
+            <span>Retour</span>
+        </a>
+    </div>
+</div>
+
+<style>
+.trip-page {
+    background: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.trip-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a4a3a 0%, #0d2818 50%, #0a0a0a 100%);
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.trip-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #7fff7f 0%, #00d4aa 50%, #00a8cc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 20px rgba(0, 212, 170, 0.3)); }
+    to { filter: drop-shadow(0 0 40px rgba(0, 212, 170, 0.6)); }
+}
+
+.trip-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.trip-teaser {
+    font-size: 3rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.trip-teaser span {
+    animation: float 3s ease-in-out infinite;
+}
+
+.trip-teaser span:nth-child(2) { animation-delay: 0.2s; }
+.trip-teaser span:nth-child(3) { animation-delay: 0.4s; }
+.trip-teaser span:nth-child(4) { animation-delay: 0.6s; }
+.trip-teaser span:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.trip-intro {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-content h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #00d4aa;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.highlight-text {
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.2) 0%, rgba(0, 168, 204, 0.2) 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #00d4aa;
+    font-style: italic;
+}
+
+.trip-timeline {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: #00d4aa;
+}
+
+.trip-day {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 6rem;
+    align-items: center;
+}
+
+.trip-day.reverse {
+    flex-direction: row-reverse;
+}
+
+.day-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.day-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.day-image.full-width img {
+    height: 400px;
+}
+
+.day-content {
+    flex: 1;
+}
+
+.day-content.centered {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.day-number {
+    display: inline-block;
+    background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+    color: #0a0a0a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.day-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.day-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+}
+
+.day-mood {
+    font-style: italic;
+    color: #00d4aa !important;
+    opacity: 1 !important;
+}
+
+.trip-fullwidth-image {
+    margin: 4rem 0;
+    position: relative;
+}
+
+.trip-fullwidth-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-style: italic;
+    color: #00d4aa;
+}
+
+.trip-final {
+    background: linear-gradient(135deg, #0d2818 0%, #1a4a3a 50%, #0d2818 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.final-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.final-content h2:last-of-type {
+    color: #00d4aa;
+    margin-bottom: 3rem;
+}
+
+.final-details {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-icon {
+    font-size: 2.5rem;
+}
+
+.detail-text {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.final-message {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #00d4aa;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.trip-back {
+    padding: 3rem;
+    text-align: center;
+    background: #0a0a0a;
+}
+
+.trip-back .btn-primary {
+    display: inline-flex;
+    padding: 1rem 3rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .trip-title {
+        font-size: 2.5rem;
+    }
+
+    .trip-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .trip-teaser {
+        font-size: 2rem;
+    }
+
+    .trip-day, .trip-day.reverse {
+        flex-direction: column;
+    }
+
+    .day-image {
+        max-width: 100%;
+    }
+
+    .day-image img {
+        height: 250px;
+    }
+
+    .final-details {
+        gap: 2rem;
+    }
+
+    .trip-fullwidth-image img {
+        height: 300px;
+    }
+}
+</style>
+
+<div class="fireworks-container">
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="heart-float">❤️</div>
+    <div class="heart-float">💕</div>
+    <div class="heart-float">💖</div>
+    <div class="heart-float">💗</div>
+    <div class="heart-float">💝</div>
+</div>
+
+<style>
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: firework 2s ease-out infinite;
+}
+
+.firework:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+    background: #ff6b6b;
+}
+
+.firework:nth-child(2) {
+    left: 50%;
+    animation-delay: 0.5s;
+    background: #ffd93d;
+}
+
+.firework:nth-child(3) {
+    left: 80%;
+    animation-delay: 1s;
+    background: #6bcb77;
+}
+
+@keyframes firework {
+    0% {
+        bottom: 10%;
+        transform: scale(1);
+        opacity: 1;
+        box-shadow:
+            0 0 0 0 currentColor,
+            0 0 0 0 currentColor,
+            0 0 0 0 currentColor,
+            0 0 0 0 currentColor;
+    }
+    50% {
+        bottom: 60%;
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        bottom: 60%;
+        transform: scale(0);
+        opacity: 0;
+        box-shadow:
+            -50px -50px 0 2px #ff6b6b,
+            50px -50px 0 2px #ffd93d,
+            50px 50px 0 2px #6bcb77,
+            -50px 50px 0 2px #4d96ff,
+            0 -70px 0 2px #ff6b6b,
+            70px 0 0 2px #ffd93d,
+            0 70px 0 2px #6bcb77,
+            -70px 0 0 2px #4d96ff;
+    }
+}
+
+.heart-float {
+    position: absolute;
+    font-size: 2rem;
+    animation: heartFloat 4s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.heart-float:nth-child(4) { left: 10%; animation-delay: 0s; }
+.heart-float:nth-child(5) { left: 30%; animation-delay: 0.8s; }
+.heart-float:nth-child(6) { left: 50%; animation-delay: 1.6s; }
+.heart-float:nth-child(7) { left: 70%; animation-delay: 2.4s; }
+.heart-float:nth-child(8) { left: 90%; animation-delay: 3.2s; }
+
+@keyframes heartFloat {
+    0% {
+        bottom: -50px;
+        transform: scale(1) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        bottom: 100vh;
+        transform: scale(1.2) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+.fireworks-container.stopped {
+    display: none;
+}
+</style>
+
+<script>
+(function() {
+    function logClick(buttonName) {
+        fetch('/lysa/public/quiz/log-click', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ button: buttonName, page: 'letsgo' })
+        }).catch(function(err) { console.log('Log error:', err); });
+    }
+
+    // Log page view
+    logClick('Page On y va affichée');
+
+    // Stop fireworks after 30 seconds
+    setTimeout(function() {
+        const fireworksContainer = document.querySelector('.fireworks-container');
+        if (fireworksContainer) {
+            fireworksContainer.classList.add('stopped');
+        }
+    }, 30000);
+
+    // Log click on back button
+    const backLink = document.querySelector('.trip-back a');
+    if (backLink) {
+        backLink.addEventListener('click', function() {
+            logClick('Retour');
+        });
+    }
+})();
+</script>
+{% endblock %}

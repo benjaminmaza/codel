@@ -1,0 +1,177 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Unlock Us - Mission accomplie !{% endblock %}
+
+{% block body %}
+<div class="quiz-container">
+    <div class="success-page">
+        <div class="celebration-section">
+            <div class="success-animation">
+                <div class="confetti">🎉</div>
+                <div class="confetti">✨</div>
+                <div class="confetti">🌠</div>
+                <div class="confetti">🌟</div>
+                <div class="confetti">💫</div>
+            </div>
+            
+            <h1 class="success-title">Joyeux Noël !</h1>
+        </div>
+
+        <div class="reward-section">
+            <div class="reward-box">
+                <div class="discovery-section">
+                    <button id="discoverYouBtn" class="btn-primary discovery-btn">
+                        <span>Découvre qui tu es</span>
+                    </button>
+                    <button id="discoverMeBtn" class="btn-primary discovery-btn">
+                        <span>Découvre qui je suis</span>
+                    </button>
+                    <a href="{{ path('quiz_gift') }}" class="btn-primary discovery-btn" style="text-decoration: none;">
+                        <span>Découvre ton cadeau</span>
+                    </a>
+                    <button id="discoverFeelBtn" class="btn-primary discovery-btn btn-disabled" style="background: #999 !important; opacity: 0.7; cursor: not-allowed;">
+                        <span style="color: white !important;">Comment tu te sens avec moi ?</span>
+                    </button>
+                </div>
+                
+                <!-- Popup modal for "qui je suis" -->
+                <div id="discoveryMePopup" class="popup-overlay" style="display: none;">
+                    <div class="popup-content">
+                        <button class="popup-close" data-popup="me">&times;</button>
+                        <div class="popup-message">
+                            <p>C'est toi qui pourrait en parler le mieux ;)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Popup modal for "comment tu te sens" (disabled) -->
+                <div id="discoveryFeelPopup" class="popup-overlay" style="display: none;">
+                    <div class="popup-content">
+                        <button class="popup-close" data-popup="feel">&times;</button>
+                        <div class="popup-message">
+                            <p>Cette fonctionnalité n'est pas disponible pour le moment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Popup modal for "qui tu es" -->
+                <div id="discoveryYouPopup" class="popup-overlay" style="display: none;">
+                    <div class="popup-content popup-large">
+                        <button class="popup-close" data-popup="you">&times;</button>
+                        <div class="popup-message">
+                            <p>Tu es un être humain, une femme vivante, sur la planète Terre, 3ᵉ planète du système solaire, l'un des 100 milliards de systèmes planétaires estimés dans la galaxie de la Voie lactée, elle-même l'une des 2 000 milliards de galaxies de l'univers observable.</p>
+                            <p>Ton organisme est constitué d'un assemblage temporaire de particules élémentaires — quarks, électrons, photons — organisées en atomes puis en molécules complexes, forgés dans le cœur d'anciennes étoiles. Le tout évoluant depuis plus de 13,8 milliards d'années. Et ouais, nous sommes littéralement de la poussière d'étoile, c'est la classe non ?</p>
+                            <p>Ton nom d'humaine est Lysa, avec un y pour le style, il y en a seulement 2500 en France. Ton âge biologique est de 40 ans. Ton état d'esprit se situe entre 25 et 35 ans. Ton âge mental reste indéterminé.</p>
+                            <p>Tu es motivée, tu es positive, tu es sociable et tournée vers les autres. Tu penses toujours à ce qui pourrait faire plaisir aux autres. Parfois c'est lourd à porter pour toi.</p>
+                            <p>Tu comprends vite, tu n'aimes pas qu'on répète les choses, tu te fais un avis rapide et souvent juste sur une situation. Tu sais ce que tu veux, et on ne te fait pas changer d'avis comme ça — et en même temps, choisir un plat, un vêtement ou un bijou peut parfois prendre des heures.</p>
+                            <p>Tu peux faire beaucoup par amour, tu es démonstrative, attentionnée et pleine de tendresse pour l'autre. Pour te sentir bien, tu as besoin de sécurité, de preuves d'amour constantes.</p>
+                            <p>Tu veux bouger, voir le monde et ne surtout pas revenir au même endroit. Tu râles quand les randos sont plus dures que prévu, et en même temps, physiquement tu assures grave.</p>
+                            <p>Tu as une expression qu'on adore quand tu es légèrement gênée et que j'appelle la mou légendaire. Tu dégages une énergie physique douce, attractive et délicate. Tu es juste belle en fait.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="share-section">
+            <p class="share-text">Cette app est cool ?</p>
+            <div class="share-actions" id="feedbackButtons">
+                <button id="feedbackPositiveBtn" class="btn-primary">
+                    <span>Mais trop</span>
+                    <span class="btn-icon">😍✨</span>
+                </button>
+                <button id="feedbackNegativeBtn" class="btn-secondary">
+                    <span>Mouis, c'est un peu le malaise</span>
+                    <span class="btn-icon">😅🤔</span>
+                </button>
+            </div>
+            <div id="feedbackMessage" class="feedback-message" style="display: none;">
+                <p>Merci pour ton feedback ! 🙏</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    function logClick(buttonName) {
+        fetch('/lysa/public/quiz/log-click', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ button: buttonName, page: 'success' })
+        }).catch(function(err) { console.log('Log error:', err); });
+    }
+
+    function initSuccessPage() {
+        const discoverYouBtn = document.getElementById('discoverYouBtn');
+        const discoverMeBtn = document.getElementById('discoverMeBtn');
+        const discoverFeelBtn = document.getElementById('discoverFeelBtn');
+        const discoveryYouPopup = document.getElementById('discoveryYouPopup');
+        const discoveryMePopup = document.getElementById('discoveryMePopup');
+        const discoveryFeelPopup = document.getElementById('discoveryFeelPopup');
+
+        if (discoverYouBtn && discoveryYouPopup) {
+            discoverYouBtn.onclick = function(e) {
+                e.preventDefault();
+                logClick('Découvre qui tu es');
+                discoveryYouPopup.style.display = 'flex';
+                return false;
+            };
+        }
+
+        if (discoverMeBtn && discoveryMePopup) {
+            discoverMeBtn.onclick = function(e) {
+                e.preventDefault();
+                logClick('Découvre qui je suis');
+                discoveryMePopup.style.display = 'flex';
+                return false;
+            };
+        }
+
+        if (discoverFeelBtn && discoveryFeelPopup) {
+            discoverFeelBtn.onclick = function(e) {
+                e.preventDefault();
+                logClick('Comment tu te sens avec moi');
+                discoveryFeelPopup.style.display = 'flex';
+                return false;
+            };
+        }
+
+        // Log click on gift link
+        const giftLink = document.querySelector('a[href*="quiz_gift"], a[href*="/quiz/gift"]');
+        if (giftLink) {
+            giftLink.addEventListener('click', function() {
+                logClick('Découvre ton cadeau');
+            });
+        }
+
+        // Close popup on overlay click
+        const popupOverlays = document.querySelectorAll('.popup-overlay');
+        popupOverlays.forEach(function(overlay) {
+            overlay.onclick = function(e) {
+                if (e.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            };
+        });
+
+        // Close popup on X click
+        const popupCloseButtons = document.querySelectorAll('.popup-close');
+        popupCloseButtons.forEach(function(btn) {
+            btn.onclick = function(e) {
+                const popup = btn.closest('.popup-overlay');
+                if (popup) {
+                    popup.style.display = 'none';
+                }
+            };
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSuccessPage);
+    } else {
+        initSuccessPage();
+    }
+})();
+</script>
+{% endblock %}

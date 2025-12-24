@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EndOfWord Game - Question {{ questionId }}{% endblock %}
+
+{% block body %}
+<div class="quiz-container">
+    <div class="question-page">
+        <div class="progress-section">
+            <div class="progress-info">
+                <span class="progress-text">Question {{ questionId }} sur {{ totalQuestions }}</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ progress }}%"></div>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <div class="question-number">{{ questionId }}</div>
+            <h2 class="question-text{% if questionId == 11 %} question-text-long{% endif %}">{{ questionText|raw }}</h2>
+        </div>
+
+        <form id="answerForm" class="answer-section">
+            <input type="hidden" name="question_id" value="{{ questionId }}">
+            <input type="hidden" name="token" value="{{ token }}">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    name="answer" 
+                    id="answerInput" 
+                    class="answer-input" 
+                    placeholder="Ta réponse..." 
+                    autocomplete="off"
+                    value=""
+                    required
+                >
+                <button type="submit" class="btn-submit">
+                    <span>Valider</span>
+                </button>
+            </div>
+            
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                <span>✨ Vérification en cours...</span>
+            </div>
+        </form>
+
+        <div class="navigation-info">
+            <p class="hint">Prends ton temps, chaque réponse compte 💫</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

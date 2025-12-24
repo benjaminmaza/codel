@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ project_name }}{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .header { background: #27ae60; color: white; padding: 2rem; text-align: center; margin-bottom: 2rem; }
+    .btn { display: inline-block; background: #3498db; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; }
+    .btn:hover { background: #2980b9; }
+</style>
+
+<div class="header">
+    <h1>{{ project_name }}</h1>
+    <p>Bienvenue sur votre nouveau service en ligne !</p>
+</div>
+
+<div class="example-wrapper">
+    <h2>✅ Votre installation Symfony fonctionne correctement !</h2>
+    
+    <p>Cette page est générée par :</p>
+    <ul>
+        <li>Le contrôleur : <code>/var/www/html/template/src/Controller/HomeController.php</code></li>
+        <li>Le template : <code>/var/www/html/template/templates/home/index.html.twig</code></li>
+    </ul>
+    
+    <h3>Prochaines étapes</h3>
+    <ul>
+        <li>Créer d'autres pages et fonctionnalités</li>
+        <li>Ajouter une connexion à la base de données</li>
+        <li>Développer l'interface utilisateur</li>
+    </ul>
+    
+    <p>
+        <a href="https://symfony.com/doc" class="btn">Documentation Symfony</a>
+    </p>
+</div>
+{% endblock %}

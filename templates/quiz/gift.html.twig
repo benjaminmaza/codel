@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Unlock Us - Découvre ton cadeau{% endblock %}
+
+{% block body %}
+<div class="quiz-container">
+    <div class="success-page">
+        <div class="celebration-section">
+            <div class="success-animation">
+                <div class="confetti">🎁</div>
+                <div class="confetti">✨</div>
+                <div class="confetti">🎀</div>
+                <div class="confetti">🌟</div>
+                <div class="confetti">💝</div>
+            </div>
+
+            <h1 class="success-title">Découvre ton cadeau</h1>
+        </div>
+
+        <div class="reward-section">
+            <div class="reward-box">
+                <div class="gift-message">
+                    <p>Cela se passerait pour ton anniversaire.</p>
+                    <p>Je te propose de découvrir et d'activer ce cadeau si tu te sens à nouveau en sécurité et en confiance avec moi avant le 04/01/2026 (pour organisation).</p>
+                </div>
+
+                <div class="discovery-section" style="margin-top: 2rem;">
+                    <button id="confirmOkBtn" class="btn-primary discovery-btn" style="cursor: pointer;">
+                        <span>C'est ok pour moi</span>
+                    </button>
+                    <a id="notReadyBtn" href="{{ path('quiz_success') }}" class="btn-primary discovery-btn" style="text-decoration: none; background: #999 !important; opacity: 0.7; cursor: pointer;">
+                        <span style="color: white !important;">Pour le moment je ne suis pas prête</span>
+                    </a>
+                </div>
+
+                <!-- Popup de confirmation -->
+                <div id="confirmPopup" class="popup-overlay" style="display: none;">
+                    <div class="popup-content">
+                        <div class="popup-message" style="text-align: center;">
+                            <p style="font-size: 1.5rem; margin-bottom: 1.5rem;">Sûr ?</p>
+                            <div class="discovery-section">
+                                <a id="confirmYesBtn" href="{{ path('quiz_letsgo') }}" class="btn-primary discovery-btn" style="text-decoration: none;">
+                                    <span>Oui</span>
+                                </a>
+                                <a id="confirmNoBtn" href="{{ path('quiz_success') }}" class="btn-primary discovery-btn" style="text-decoration: none; background: #999 !important; opacity: 0.7; cursor: pointer;">
+                                    <span style="color: white !important;">Non</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    function logClick(buttonName) {
+        fetch('/lysa/public/quiz/log-click', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ button: buttonName, page: 'gift' })
+        }).catch(function(err) { console.log('Log error:', err); });
+    }
+
+    function initGiftPage() {
+        const confirmOkBtn = document.getElementById('confirmOkBtn');
+        const confirmPopup = document.getElementById('confirmPopup');
+
+        if (confirmOkBtn && confirmPopup) {
+            confirmOkBtn.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                logClick('C\'est ok pour moi');
+                confirmPopup.style.display = 'flex';
+                return false;
+            };
+
+            confirmPopup.onclick = function(e) {
+                if (e.target === confirmPopup) {
+                    confirmPopup.style.display = 'none';
+                }
+            };
+        }
+
+        // Log click on "not ready" button
+        const notReadyBtn = document.getElementById('notReadyBtn');
+        if (notReadyBtn) {
+            notReadyBtn.addEventListener('click', function() {
+                logClick('Pour le moment je ne suis pas prête');
+            });
+        }
+
+        // Log click on "Oui" in confirmation popup
+        const confirmYesBtn = document.getElementById('confirmYesBtn');
+        if (confirmYesBtn) {
+            confirmYesBtn.addEventListener('click', function() {
+                logClick('Confirmation Oui');
+            });
+        }
+
+        // Log click on "Non" in confirmation popup
+        const confirmNoBtn = document.getElementById('confirmNoBtn');
+        if (confirmNoBtn) {
+            confirmNoBtn.addEventListener('click', function() {
+                logClick('Confirmation Non');
+            });
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGiftPage);
+    } else {
+        initGiftPage();
+    }
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Unlock Us{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>🌟</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/quiz.css') }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/quiz.js') }}" defer></script>
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <header class="app-header">
+            <div class="logo-container">
+                <h1 class="app-logo">Unlock <span class="highlight">Us</span></h1>
+                <p class="app-slogan">Je ne sais plus bien, dis-moi ce qu'on devient</p>
+            </div>
+        </header>
+        
+        <main class="app-main">
+            {% block body %}{% endblock %}
+        </main>
+    </body>
+</html>
