@@ -13,6 +13,7 @@
         {% endblock %}
 
         {% block javascripts %}
+            <script>window.APP_BASE_URL = '{{ base_url }}';</script>
             <script src="{{ asset('js/quiz.js') }}" defer></script>
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
