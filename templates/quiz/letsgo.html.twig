@@ -642,7 +642,7 @@
 <script>
 (function() {
     function logClick(buttonName) {
-        fetch('/lysa/public/quiz/log-click', {
+        fetch('/codel/quiz/log-click', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ button: buttonName, page: 'letsgo' })

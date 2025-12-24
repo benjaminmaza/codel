@@ -26,7 +26,7 @@ class EndOfWordQuiz {
                 const firstToken = startBtn.dataset.firstToken;
                 this.clearProgress();
                 this.clearAnswers();
-                window.location.href = `/lysa/public/quiz/question/1/${firstToken}`;
+                window.location.href = `/codel/quiz/question/1/${firstToken}`;
             });
         }
         
@@ -34,7 +34,7 @@ class EndOfWordQuiz {
             resumeBtn.addEventListener('click', () => {
                 const resumeId = resumeBtn.dataset.resumeId;
                 const resumeToken = resumeBtn.dataset.resumeToken;
-                window.location.href = `/lysa/public/quiz/question/${resumeId}/${resumeToken}`;
+                window.location.href = `/codel/quiz/question/${resumeId}/${resumeToken}`;
             });
         }
 
@@ -112,7 +112,7 @@ class EndOfWordQuiz {
         submitBtn.disabled = true;
 
         try {
-            const response = await fetch('/lysa/public/quiz/submit', {
+            const response = await fetch('/codel/quiz/submit', {
                 method: 'POST',
                 body: formData
             });
@@ -349,7 +349,7 @@ class EndOfWordQuiz {
         
         try {
             console.log('Sending feedback request...');
-            const response = await fetch('/lysa/public/quiz/feedback', {
+            const response = await fetch('/codel/quiz/feedback', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
